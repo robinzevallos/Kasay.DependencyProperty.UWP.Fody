@@ -33,7 +33,7 @@ partial class ModuleWeaver
             TypeSystem.VoidReference);
 
         var callTypeOf = this.GetMethodReference("System.Type", "GetTypeFromHandle");
-        var callRegister = kasayAssembly.GetMethodReference("DependencyProperty.UWP.DependencyProperty", "Register");
+        var callRegister = customAssembly.GetMethodReference("Custom.UWP.DependencyProperty", "Register");
 
         var processor = method.Body.GetILProcessor();
         processor.Emit(OpCodes.Ldstr, "Demo");

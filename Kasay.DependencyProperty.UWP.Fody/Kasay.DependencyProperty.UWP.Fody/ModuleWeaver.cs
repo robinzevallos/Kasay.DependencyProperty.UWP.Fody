@@ -12,7 +12,7 @@ public partial class ModuleWeaver : BaseModuleWeaver
     private FieldDefinition dependencyPropertyField;
     private PropertyDefinition targetPropertyDefinition;
 
-    AssemblyFactory uwpAssembly, kasayAssembly;
+    AssemblyFactory uwpAssembly, customAssembly;
 
     public override void Execute()
     {
@@ -37,7 +37,7 @@ public partial class ModuleWeaver : BaseModuleWeaver
     void SetAssembly()
     {
         uwpAssembly = new AssemblyFactory("Windows.Foundation.UniversalApiContract", ModuleDefinition);
-        kasayAssembly = new AssemblyFactory("Kasay.DependencyProperty.UWP", ModuleDefinition);
+        customAssembly = new AssemblyFactory("Kasay.DependencyProperty.UWP", ModuleDefinition);
     }
 
     public override IEnumerable<string> GetAssembliesForScanning()
