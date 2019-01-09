@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Kasay.DependencyProperty.UWP.Fody
+namespace Kasay.DependencyProperty.UWP
 {
     public class Class1
     {
