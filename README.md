@@ -1,0 +1,1 @@
+# Kasay.DependencyProperty.UWP.Fody
