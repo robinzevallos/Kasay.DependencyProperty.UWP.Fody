@@ -1,4 +1,4 @@
-﻿namespace Kasay.Custom.UWP
+﻿namespace Kasay.DependencyProperty.UWP
 {
     using System;
 

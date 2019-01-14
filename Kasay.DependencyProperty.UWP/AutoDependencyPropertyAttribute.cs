@@ -3,7 +3,7 @@
     using System;
 
     [AttributeUsage(AttributeTargets.Class)]
-    public class AutoDependencyProperty : Attribute
+    public class AutoDependencyPropertyAttribute : Attribute
     {
     }
 }
