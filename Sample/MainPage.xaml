@@ -9,6 +9,6 @@
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     <StackPanel Margin="20">
-        <local:DemoControl TextButton="Mamon" FontSizeButton="50" />
+        <local:DemoControl TextButton="Pollo" FontSizeButton="50" />
     </StackPanel>
 </Page>

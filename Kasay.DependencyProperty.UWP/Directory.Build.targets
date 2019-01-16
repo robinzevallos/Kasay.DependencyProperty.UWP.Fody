@@ -4,6 +4,7 @@
   <Target Name="IncludeFodyFiles">
     <ItemGroup>
       <NetStandardFilesToInclude Include="$(WeaverDirPath)\netstandard2*\$(PackageId).dll" />
+      
     </ItemGroup>
 
     <Error Text="FodyPackaging: No NetStandard weavers found to include in package. Maybe the build order is wrong?" Condition="'@(NetStandardFilesToInclude)'==''" />

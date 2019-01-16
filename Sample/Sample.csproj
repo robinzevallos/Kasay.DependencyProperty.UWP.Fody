@@ -170,7 +170,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Kasay.DependencyProperty.UWP\Kasay.DependencyProperty.UWP.csproj">
-      <Project>{d2a45350-238b-4ea2-ad20-5dbfdcd614f0}</Project>
+      <Project>{0aa6d835-7d72-447c-8ea3-cd9acefb60db}</Project>
       <Name>Kasay.DependencyProperty.UWP</Name>
     </ProjectReference>
   </ItemGroup>
