@@ -1,5 +1,4 @@
 ﻿using Fody;
-using Kasay.DependencyProperty.UWP.Fody;
 using Mono.Cecil;
 using System;
 using System.Collections.Generic;

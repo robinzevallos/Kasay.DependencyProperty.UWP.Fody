@@ -7,8 +7,8 @@
   <ItemGroup>
     <PackageReference Include="FodyHelpers" Version="3.3.5" />
   </ItemGroup>
-  
-<Target Name="Any" AfterTargets="Build">
+
+  <Target Name="Any" AfterTargets="Build">
     <Copy SourceFiles="$(TargetPath)" DestinationFolder="$(SolutionDir)\packages\$(PackageId)" />
   </Target>
 
