@@ -2,7 +2,6 @@
 using Mono.Cecil;
 using System;
 using System.Collections.Generic;
-using System.Linq;
 
 public class ModuleWeaver : BaseModuleWeaver
 {
@@ -36,16 +35,14 @@ public class ModuleWeaver : BaseModuleWeaver
     {
         foreach (var type in ModuleDefinition.GetTypes())
         {
-            var isTargetType = type.CustomAttributes
-                .Any(_ => _.AttributeType.Name == "AutoDependencyPropertyAttribute");
-
-            if (isTargetType)
+            if (type.ExistAttribute("AutoDependencyPropertyAttribute"))
             {
                 new ConstructorImplementer(uwpAssembly, type, isModeTest);
 
                 foreach (var prop in type.Properties)
                 {
-                    new DependencyPropertyFactory(uwpAssembly, kasayUwpAssembly,  prop);
+                    if (!prop.ExistAttribute("NotAutoAttribute"))
+                        new DependencyPropertyFactory(uwpAssembly, kasayUwpAssembly, prop);
                 }
             }
         }

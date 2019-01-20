@@ -30,4 +30,9 @@ public static class ModuleDefinitionExtension
 
         return reference;
     }
+
+    public static Boolean ExistAttribute(this ICustomAttributeProvider obj, String name)
+    {
+        return obj.CustomAttributes.Any(_ => _.AttributeType.Name == name);
+    }
 }

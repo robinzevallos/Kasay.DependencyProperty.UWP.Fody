@@ -1,5 +1,4 @@
-﻿
-namespace Sample
+﻿namespace Sample
 {
     using Kasay.DependencyProperty.UWP;
     using System;
@@ -11,6 +10,8 @@ namespace Sample
         public String TextButton { get; set; }
 
         public Int32 FontSizeButton { get; set; }
+
+        [NotAuto] public String Any { get; set; }
 
         public DemoControl()
         {
