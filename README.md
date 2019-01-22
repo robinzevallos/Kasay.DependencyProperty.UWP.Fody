@@ -13,7 +13,7 @@ See also [Fody usage](https://github.com/Fody/Fody#usage).
 Install the [Kasay.DependencyProperty.UWP.Fody NuGet package](https://www.nuget.org/packages/Kasay.DependencyProperty.UWP.Fody/):
 
 ```powershell
-PM> Install-Package Kasay.DependencyProperty.UWP.Fody -Version 1.0.0	
+PM> Install-Package Kasay.DependencyProperty.UWP.Fody -Version 1.0.2	
 ```
 ### Add to FodyWeavers.xml
 ** it's generated automatically after build.
