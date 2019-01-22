@@ -32,21 +32,20 @@ Add `<Kasay.DependencyProperty.UWP/>` to [FodyWeavers.xml](https://github.com/Fo
 Before code:
 
 ```csharp
-    [AutoDependencyProperty]
-    public class SomeControl : UserControl
-    {
-        public String SomeName { get; set; }
+public class DemoControl : UserControl
+{
+  [Bind] public String SomeName { get; set; }
 
-        public Int32 SomeNumber { get; set; }
+  [Bind] public Int32 SomeNumber { get; set; }
 
-        public Boolean SomeCondition { get; set; }
-    }
+  [Bind] public Boolean SomeCondition { get; set; }
+}
 ```
 
 What gets compiled:
 
 ```csharp
-    public class SomeControl : UserControl
+    public class DemoControl : UserControl
     {
         public static readonly DependencyProperty SomeNameProperty =
            DependencyProperty.Register("SomeName", typeof(String), typeof(SomeControl), null);
@@ -81,4 +80,4 @@ What gets compiled:
         }
     }
 ```
-As Observed DependencyProperty declarations in UWP are redundant and repetitive, but adding the attibute AutoDependencyProperty leaves the code clean.
+As Observed DependencyProperty declarations in UWP are redundant and repetitive, but adding the attibute Bind to each property leaves the code clean.
