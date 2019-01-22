@@ -1,4 +1,4 @@
-﻿namespace Kasay.DependencyProperty.UWP
+﻿namespace Kasay.DependencyProperty.Helpers
 {
     using System;
 

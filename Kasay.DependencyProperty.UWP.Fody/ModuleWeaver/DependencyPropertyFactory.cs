@@ -1,4 +1,5 @@
-﻿using Mono.Cecil;
+﻿using Kasay.FodyHelpers;
+using Mono.Cecil;
 using Mono.Cecil.Cil;
 using Mono.Cecil.Rocks;
 
@@ -49,7 +50,7 @@ internal class DependencyPropertyFactory
         var nameProperty = propertyDefinition.Name;
         var typeProperty = propertyDefinition.PropertyType;
         var callTypeOf = moduleDefinition.GetMethodReference("System.Type", "GetTypeFromHandle");
-        var callRegister = kasayUwpAssembly.GetMethodReference("Kasay.DependencyProperty.UWP.DependencyProperty", "Register");
+        var callRegister = kasayUwpAssembly.GetMethodReference("Kasay.DependencyProperty.Helpers.DependencyProperty", "Register");
 
         method.Body.Instructions.RemoveAt(method.Body.Instructions.Count - 1);
 

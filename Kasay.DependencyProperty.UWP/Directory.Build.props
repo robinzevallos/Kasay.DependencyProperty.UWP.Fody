@@ -3,8 +3,8 @@
   <PropertyGroup>
     <Authors>Robin Zevallos</Authors>
     <Description>Auto DependencyProperty in UWP with Fody.</Description>
-    <PackageTags>ILWeaving, Fody, Cecil, UWP, Binding, DependencyProperty</PackageTags>
-    <Version>1.0.0</Version>
+    <PackageTags>ILWeaving, Fody, Cecil, UWP, Binding, DependencyProperty, Auto</PackageTags>
+    <Version>1.0.2</Version>
   </PropertyGroup>
 
   <PropertyGroup>

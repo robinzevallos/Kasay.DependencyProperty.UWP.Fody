@@ -1,23 +1,15 @@
 ﻿using Fody;
+using Kasay.FodyHelpers;
 using Mono.Cecil;
 using System;
 using System.Collections.Generic;
 
 public class ModuleWeaver : BaseModuleWeaver
 {
-    readonly Boolean isModeTest;
-
     AssemblyFactory uwpAssembly;
     AssemblyFactory kasayUwpAssembly;
 
-    public ModuleWeaver()
-    {
-    }
-
-    public ModuleWeaver(Boolean isModeTest) : this()
-    {
-        this.isModeTest = isModeTest;
-    }
+    public Boolean IsTest { get; set; }
 
     public override void Execute()
     {
@@ -35,13 +27,13 @@ public class ModuleWeaver : BaseModuleWeaver
     {
         foreach (var type in ModuleDefinition.GetTypes())
         {
-            if (type.ExistAttribute("AutoDependencyPropertyAttribute"))
+            if (type.InheritFrom("Windows.UI.Xaml.FrameworkElement"))
             {
-                new ConstructorImplementer(uwpAssembly, type, isModeTest);
+                new ConstructorImplementer(uwpAssembly, type, IsTest);
 
                 foreach (var prop in type.Properties)
                 {
-                    if (!prop.ExistAttribute("NotAutoAttribute"))
+                    if (prop.ExistAttribute("BindAttribute"))
                         new DependencyPropertyFactory(uwpAssembly, kasayUwpAssembly, prop);
                 }
             }
