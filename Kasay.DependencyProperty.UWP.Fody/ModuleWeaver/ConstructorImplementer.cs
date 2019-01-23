@@ -32,8 +32,6 @@ internal class ConstructorImplementer
     {
         var method = typeDefinition.GetConstructors().First();
 
-        var callGet_Content = uwpAssembly.GetMethodReference("Windows.UI.Xaml.Controls.UserControl", "get_Content");
-        var frameworkElement = uwpAssembly.GetTypeReference("Windows.UI.Xaml.FrameworkElement");
         var callPut_DataContext = uwpAssembly.GetMethodReference("Windows.UI.Xaml.FrameworkElement", "put_DataContext");
 
         method.Body.Instructions.RemoveAt(method.Body.Instructions.Count - 1);
@@ -41,10 +39,8 @@ internal class ConstructorImplementer
         var processor = method.Body.GetILProcessor();
         processor.Emit(OpCodes.Nop);
         processor.Emit(OpCodes.Ldarg_0);
-        processor.Emit(OpCodes.Call, callGet_Content);
-        processor.Emit(OpCodes.Castclass, frameworkElement);
         processor.Emit(OpCodes.Ldarg_0);
-        processor.Emit(OpCodes.Callvirt, callPut_DataContext);
+        processor.Emit(OpCodes.Call, callPut_DataContext);
         processor.Emit(OpCodes.Nop);
         processor.Emit(OpCodes.Ret);
     }

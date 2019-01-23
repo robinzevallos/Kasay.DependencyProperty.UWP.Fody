@@ -44,7 +44,7 @@
 
         public ExpectedControl()
         {
-            ((FrameworkElement)Content).DataContext = this;
+            DataContext = this;
         }
     }
 }
