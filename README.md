@@ -1,4 +1,4 @@
-[![NuGet Status](http://img.shields.io/nuget/v/PropertyChanged.Fody.svg?style=flat&max-age=86400)](https://www.nuget.org/packages/Kasay.DependencyProperty.UWP.Fody/)
+[![NuGet Status](http://img.shields.io/nuget/v/Kasay.DependencyProperty.UWP.Fody.svg?style=flat&max-age=86400)](https://www.nuget.org/packages/Kasay.DependencyProperty.UWP.Fody/)
 
 ![Icon](https://raw.githubusercontent.com/robinzevallos/Kasay.DependencyProperty.UWP.Fody/master/kasay_icon.png)
       
@@ -13,7 +13,7 @@ See also [Fody usage](https://github.com/Fody/Fody#usage).
 Install the [Kasay.DependencyProperty.UWP.Fody NuGet package](https://www.nuget.org/packages/Kasay.DependencyProperty.UWP.Fody/):
 
 ```powershell
-PM> Install-Package Kasay.DependencyProperty.UWP.Fody -Version 1.0.2	
+PM> Install-Package Kasay.DependencyProperty.UWP.Fody -Version 1.0.4	
 ```
 ### Add to FodyWeavers.xml
 ** it's generated automatically after build.
