@@ -81,3 +81,5 @@ public class DemoControl : UserControl
 }
 ```
 As Observed DependencyProperty declarations in UWP are redundant and repetitive, but adding the attibute Bind to each property leaves the code clean.
+
+### [Sample](https://github.com/robinzevallos/Sample.DependencyProperty.UWP)
