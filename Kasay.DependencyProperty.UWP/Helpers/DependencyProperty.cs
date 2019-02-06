@@ -1,12 +1,13 @@
-﻿namespace Kasay.DependencyProperty.Helpers
+﻿namespace Kasay.Helpers
 {
     using System;
+    using Windows.UI.Xaml;
 
-    public class DependencyProperty
+    internal class LocalDependencyProperty
     {
-        public static Windows.UI.Xaml.DependencyProperty Register(String name, Type propertyType, Type ownerType)
+        public static DependencyProperty Register(String name, Type propertyType, Type ownerType)
         {
-            return Windows.UI.Xaml.DependencyProperty.Register(name, propertyType, ownerType, null);
+            return DependencyProperty.Register(name, propertyType, ownerType, null);
         }
     }
 }

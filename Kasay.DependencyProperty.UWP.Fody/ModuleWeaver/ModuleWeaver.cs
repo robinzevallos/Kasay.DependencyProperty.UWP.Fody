@@ -1,15 +1,12 @@
 ﻿using Fody;
 using Kasay.FodyHelpers;
 using Mono.Cecil;
-using System;
 using System.Collections.Generic;
 
 public class ModuleWeaver : BaseModuleWeaver
 {
     AssemblyFactory uwpAssembly;
     AssemblyFactory kasayUwpAssembly;
-
-    public Boolean IsTest { get; set; }
 
     public override void Execute()
     {
@@ -29,7 +26,7 @@ public class ModuleWeaver : BaseModuleWeaver
         {
             if (type.InheritFrom("Windows.UI.Xaml.FrameworkElement"))
             {
-                new ConstructorImplementer(uwpAssembly, type, IsTest);
+                new ConstructorImplementer(uwpAssembly, type);
 
                 foreach (var prop in type.Properties)
                 {

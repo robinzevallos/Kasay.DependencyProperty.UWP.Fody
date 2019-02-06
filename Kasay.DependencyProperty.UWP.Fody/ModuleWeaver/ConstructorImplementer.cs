@@ -2,29 +2,21 @@
 using Mono.Cecil;
 using Mono.Cecil.Cil;
 using Mono.Cecil.Rocks;
-using System;
 using System.Linq;
 
 internal class ConstructorImplementer
 {
     readonly AssemblyFactory uwpAssembly;
     readonly TypeDefinition typeDefinition;
+    readonly ModuleDefinition moduleDefinition;
 
-    ModuleDefinition moduleDefinition;
-
-    public ConstructorImplementer(
-        AssemblyFactory uwpAssembly,
-        TypeDefinition typeDefinition,
-        Boolean isTest)
+    public ConstructorImplementer(AssemblyFactory uwpAssembly, TypeDefinition typeDefinition)
     {
         this.uwpAssembly = uwpAssembly;
         this.typeDefinition = typeDefinition;
-
         moduleDefinition = typeDefinition.Module;
 
-        if (!isTest)
-            EqualDataContext();
-
+        EqualDataContext();
         AddStaticConstructor();
     }
 

@@ -6,11 +6,12 @@
 
     public class ExpectedControl : UserControl
     {
-        public static readonly DependencyProperty SomeNameProperty =
-           Kasay.DependencyProperty.Helpers.DependencyProperty.Register(
-               "SomeName",
-               typeof(String), 
-               typeof(ExpectedControl));
+        public static readonly DependencyProperty SomeNameProperty 
+            = DependencyProperty.Register(
+                "SomeName",
+                typeof(String), 
+                typeof(ExpectedControl),
+                null);
 
         public String SomeName
         {
@@ -18,11 +19,12 @@
             set => SetValue(SomeNameProperty, value);
         }
 
-        public static readonly DependencyProperty SomeNumberProperty =
-           Kasay.DependencyProperty.Helpers.DependencyProperty.Register(
-              "SomeNumber", 
-              typeof(Int32), 
-              typeof(ExpectedControl));
+        public static readonly DependencyProperty SomeNumberProperty 
+            = DependencyProperty.Register(
+                "SomeNumber", 
+                typeof(Int32), 
+                typeof(ExpectedControl),
+                null);
 
         public Int32 SomeNumber
         {
@@ -30,11 +32,12 @@
             set => SetValue(SomeNumberProperty, value);
         }
 
-        public static readonly DependencyProperty SomeConditionProperty =
-           Kasay.DependencyProperty.Helpers.DependencyProperty.Register(
-              "SomeCondition", 
-              typeof(Boolean),
-              typeof(ExpectedControl));
+        public static readonly DependencyProperty SomeConditionProperty 
+            = DependencyProperty.Register(
+                "SomeCondition", 
+                typeof(Boolean),
+                typeof(ExpectedControl),
+                null);
 
         public Boolean SomeCondition
         {

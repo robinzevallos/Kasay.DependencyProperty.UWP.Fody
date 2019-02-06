@@ -8,9 +8,9 @@ internal class DependencyPropertyFactory
     readonly AssemblyFactory uwpAssembly;
     readonly AssemblyFactory kasayUwpAssembly;
     readonly PropertyDefinition propertyDefinition;
+    readonly TypeDefinition typeDefinition;
+    readonly ModuleDefinition moduleDefinition;
 
-    TypeDefinition typeDefinition;
-    ModuleDefinition moduleDefinition;
     FieldDefinition dependencyPropertyField;
 
     public DependencyPropertyFactory(
@@ -21,7 +21,6 @@ internal class DependencyPropertyFactory
         this.uwpAssembly = uwpAssembly;
         this.kasayUwpAssembly = kasayUwpAssembly;
         this.propertyDefinition = propertyDefinition;
-
         typeDefinition = propertyDefinition.DeclaringType;
         moduleDefinition = typeDefinition.Module;
 
@@ -50,7 +49,7 @@ internal class DependencyPropertyFactory
         var nameProperty = propertyDefinition.Name;
         var typeProperty = propertyDefinition.PropertyType;
         var callTypeOf = moduleDefinition.GetMethodReference("System.Type", "GetTypeFromHandle");
-        var callRegister = kasayUwpAssembly.GetMethodReference("Kasay.DependencyProperty.Helpers.DependencyProperty", "Register");
+        var callRegister = kasayUwpAssembly.GetMethodReference("Kasay.Helpers.LocalDependencyProperty", "Register");
 
         method.Body.Instructions.RemoveAt(method.Body.Instructions.Count - 1);
 

@@ -8,7 +8,7 @@
     </ItemGroup>
 
     <Error Text="FodyPackaging: No NetStandard weavers found to include in package. Maybe the build order is wrong?" Condition="'@(NetStandardFilesToInclude)'==''" />
-    <Error Text="FodyHelpers.dll not found." Condition="'@(FodyHelpersInclude)'==''" />
+    <Error Text="Kasay.FodyHelpers.dll not found." Condition="'@(FodyHelpersInclude)'==''" />
 
     <ItemGroup>
       <TfmSpecificPackageFile Include="@(NetStandardFilesToInclude)" PackagePath="build\%(Filename)%(Extension)" />

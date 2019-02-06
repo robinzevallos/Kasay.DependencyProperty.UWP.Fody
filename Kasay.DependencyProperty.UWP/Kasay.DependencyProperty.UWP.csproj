@@ -1,18 +1,11 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
-
+﻿<Project Sdk="MSBuild.Sdk.Extras/1.6.61">
+  
   <PropertyGroup>
-    <TargetFramework>netstandard2.0</TargetFramework>
+    <TargetFramework>uap10.0</TargetFramework>
   </PropertyGroup>
 
   <ItemGroup>
     <PackageReference Include="Fody" Version="3.3.5" PrivateAssets="None" />
   </ItemGroup>
-
-  <ItemGroup>
-    <Reference Include="Windows.Foundation.UniversalApiContract">
-      <HintPath>..\..\..\..\..\..\Program Files (x86)\Windows Kits\10\References\10.0.17134.0\Windows.Foundation.UniversalApiContract\6.0.0.0\Windows.Foundation.UniversalApiContract.winmd</HintPath>
-      <IsWinMDFile>true</IsWinMDFile>
-    </Reference>
-  </ItemGroup>
-
+  
 </Project>
